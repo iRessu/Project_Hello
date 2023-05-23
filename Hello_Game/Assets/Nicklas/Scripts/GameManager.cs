@@ -5,86 +5,95 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
+    public static GameManager Instance { get { return instance; } }
 
-    public static GameManager Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                instance = FindObjectOfType<GameManager>();
-                if (instance == null)
-                {
-                    GameObject managerObject = new GameObject("GameManager");
-                    instance = managerObject.AddComponent<GameManager>();
-                }
-            }
-            return instance;
-        }
-    }
-
-
-
-
-    private Dictionary<string, bool> doorStates;
-    private List<Key.KeyType> keyList;
+    public GameData gameData;
 
     private void Awake()
     {
-        if(instance != null && instance != this)
+        if(instance != null & instance != this)
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
             return;
         }
 
         instance = this;
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(this.gameObject);
 
-        doorStates = new Dictionary<string, bool>();
-        keyList = new List<Key.KeyType>();
-    }
+        LoadGameData();
 
-
-    public void SetDoorState(string doorKey, bool isOpen)
-    {
-        if(doorStates.ContainsKey(doorKey))
-        {
-            doorStates[doorKey] = isOpen;
-        }
-
-        else
-        {
-            doorStates.Add(doorKey, isOpen);
-        }
-    }
-
-    public bool GetDoorState(string doorKey)
-    {
-        return doorStates.ContainsKey(doorKey) && doorStates[doorKey];
     }
 
     public void AddKey(Key.KeyType keyType)
     {
-        if(!keyList.Contains(keyType))
+        if(!gameData.collectedKeys.Contains(keyType))
         {
-            keyList.Add(keyType);
+            gameData.collectedKeys.Add(keyType);
+            SavedGameData();
         }
+         
+        
     }
 
     public void RemoveKey(Key.KeyType keyType)
     {
-        keyList.Remove(keyType); 
+        gameData.collectedKeys.Remove(keyType);
+        SavedGameData();
     }
 
-    public bool ContainsKey(Key.KeyType keytype)
+    public bool ContainsKey(Key.KeyType keyType)
     {
-        return keyList.Contains(keytype);
+        return gameData.collectedKeys.Contains(keyType);
     }
 
-    public List<Key.KeyType> GetKeyList()
+    public void OpenDoor(Key.KeyType keyType)
     {
-        return keyList;
+        if(!gameData.openedDoors.Contains(keyType))
+        {
+            gameData.openedDoors.Add(keyType);
+            SavedGameData();
+        }
     }
+
+    public bool IsDoorOpen(Key.KeyType keyType)
+    {
+        return gameData.openedDoors.Contains(keyType);
+    }
+
+    private void LoadGameData()
+    {
+        GameData savedGameData = Resources.Load<GameData>("SavedGameData");
+
+        if(savedGameData != null)
+        {
+            gameData.collectedKeys = savedGameData.collectedKeys;
+            gameData.openedDoors = savedGameData.openedDoors;
+        }
+        else
+        {
+            gameData.collectedKeys = new List<Key.KeyType>();
+            gameData.openedDoors = new List<Key.KeyType>();
+        }
+    }
+
+    private void SavedGameData()
+    {
+        GameData savedGameData = Resources.Load<GameData>("SavedGameData");
+
+        if(savedGameData == null)
+        {
+            savedGameData = ScriptableObject.CreateInstance<GameData>();
+            UnityEditor.AssetDatabase.CreateAsset(savedGameData, "Assets/Resources/SavedGameData.asset");
+        }
+
+        savedGameData.collectedKeys = gameData.collectedKeys;
+        savedGameData.collectedKeys = gameData.openedDoors;
+
+      
+        UnityEditor.AssetDatabase.SaveAssets();
+        UnityEditor.AssetDatabase.Refresh();
+    }
+
 
 }
   

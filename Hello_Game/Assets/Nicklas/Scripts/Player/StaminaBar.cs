@@ -10,6 +10,7 @@ public class StaminaBar : MonoBehaviour
     
     public int maxStamina = 100;
     public float currentStamina;
+    private bool isStaminaDepleted = false;
 
     private WaitForSeconds regenTick = new WaitForSeconds(0.1f);
     public Coroutine regen;
