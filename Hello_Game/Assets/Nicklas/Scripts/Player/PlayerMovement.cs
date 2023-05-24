@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float sprintMoveSpeed = 10f;
     private bool isSprinting;
     private Rigidbody2D rb;
-    public VectorValue startingPosition;
+   
 
     private bool isFacingleft;
 
@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         stamBar = FindObjectOfType<StaminaBar>();
-        transform.position = startingPosition.InitialValue;
+       
     }
 
     // Update is called once per frame

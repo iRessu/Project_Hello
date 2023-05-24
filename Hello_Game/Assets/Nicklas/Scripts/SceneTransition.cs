@@ -6,6 +6,7 @@ public class SceneTransition : MonoBehaviour
 {
     public GameObject objectToActivate;
     public GameObject objectToDeactivate;
+    public GameObject objectToDestroy;
     //public Vector2 playerPosition;
     //public VectorValue playerStorage;
 
@@ -15,6 +16,7 @@ public class SceneTransition : MonoBehaviour
         {
             objectToActivate.SetActive(true);
             objectToDeactivate.SetActive(false);
+            Destroy(objectToDestroy);
         }
     }
 }
