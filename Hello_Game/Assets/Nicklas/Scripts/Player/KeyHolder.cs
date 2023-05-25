@@ -5,9 +5,11 @@ using UnityEngine;
 
 public class KeyHolder : MonoBehaviour
 {
-
+    
     public event EventHandler OnKeysChanged;
     private List<Key.KeyType> keyList;
+
+    public DialogueManager dialogueManager;
 
     private void Awake()
     {
@@ -22,6 +24,7 @@ public class KeyHolder : MonoBehaviour
     {
         keyList.Add(keyType);
         OnKeysChanged?.Invoke(this, EventArgs.Empty);
+        dialogueManager.SetDialogue("I found a key, I wonder what door it opens?");
     }
 
     public void RemoveKey(Key.KeyType keyType)
@@ -51,6 +54,10 @@ public class KeyHolder : MonoBehaviour
             {
                 RemoveKey(keyDoor.GetKeyType());
                 keyDoor.OpenDoor();
+            }
+            else
+            {
+                dialogueManager.SetDialogue("The door is locked");
             }
         }
     }

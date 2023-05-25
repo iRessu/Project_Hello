@@ -1591,3 +1591,55 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 30304.149357 seconds.
+  path: Assets/Nicklas/Sprites/UI/D.png
+  artifactKey: Guid(3f09a31217a5e004ea439e61bcfb8598) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nicklas/Sprites/UI/D.png using Guid(3f09a31217a5e004ea439e61bcfb8598) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df3c2136b2852e7e6be4b07c5207886f') in 1.434678 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001037 seconds.
+  path: Assets/Nicklas/Sprites/UI/Down-arrow.png
+  artifactKey: Guid(e9ccb9c9b920f0742ad5107307992073) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nicklas/Sprites/UI/Down-arrow.png using Guid(e9ccb9c9b920f0742ad5107307992073) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87d698bcbd6213e9616deed241c8197c') in 0.049174 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Nicklas/Sprites/UI/S.png
+  artifactKey: Guid(8c031e3c7c3882b49a49f88633d2c699) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nicklas/Sprites/UI/S.png using Guid(8c031e3c7c3882b49a49f88633d2c699) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '402a54018a72f557488e0e929c94da31') in 0.022590 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Nicklas/Sprites/UI/Shift-Button.png
+  artifactKey: Guid(f650353276e43af418069ada76d792e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nicklas/Sprites/UI/Shift-Button.png using Guid(f650353276e43af418069ada76d792e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb7a3b4bc1738b9a8357874fbac02a85') in 0.026593 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Nicklas/Sprites/UI/Up-arrow.png
+  artifactKey: Guid(01d55ce7940a57e44b3d26d0fb1266f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nicklas/Sprites/UI/Up-arrow.png using Guid(01d55ce7940a57e44b3d26d0fb1266f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e50b02d83b62594f0ec086bb06a9ee9c') in 0.033066 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Nicklas/Sprites/UI/Left-arrow.png
+  artifactKey: Guid(3aa1b154ec0912f4185f49f072bfd1df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nicklas/Sprites/UI/Left-arrow.png using Guid(3aa1b154ec0912f4185f49f072bfd1df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb009fc69d3eef53ca188c00516a741f') in 0.029900 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Nicklas/Sprites/UI/Right-arrow.png
+  artifactKey: Guid(cc5f51254eea41f45ae92a110683c520) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nicklas/Sprites/UI/Right-arrow.png using Guid(cc5f51254eea41f45ae92a110683c520) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1444979266365b28b22f939469a0d62') in 0.036807 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Nicklas/Sprites/UI/W.png
+  artifactKey: Guid(585f1c01508bf7b4685c1a6881d610d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nicklas/Sprites/UI/W.png using Guid(585f1c01508bf7b4685c1a6881d610d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0012d5c6081472adca39942cc2626d5c') in 0.025813 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
