@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
 
     public Sound[] sounds;
     private Sound currentSound;
+    public bool isPaused = false;
 
     public AudioManager instance;
     // Start is called before the first frame update
@@ -44,13 +45,31 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        if(currentSound != null)
+        if(currentSound != null && !isPaused)
         {
             currentSound.source.Stop();
         }
 
         newSound.source.Play();
         currentSound = newSound;
+    }
+
+    public void PauseMusic()
+    {
+        if(currentSound != null && !isPaused)
+        {
+            currentSound.source.Pause();
+            isPaused = true;
+        }
+    }
+
+    public void ResumeMusic()
+    {
+        if(currentSound != null && isPaused)
+        {
+            currentSound.source.UnPause();
+            isPaused = false;
+        }
     }
 
     public void SetGlobalVolume(float volume)

@@ -8,5 +8,6 @@ public class MenuSceneController : MonoBehaviour
     void Start()
     {
         FindObjectOfType<AudioManager>().Play("MenuTheme");
+        FindObjectOfType<AudioManager>().ResumeMusic();
     }
 }
