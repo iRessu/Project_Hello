@@ -54,6 +54,7 @@ public class KeyHolder : MonoBehaviour
             {
                 RemoveKey(keyDoor.GetKeyType());
                 keyDoor.OpenDoor();
+                dialogueManager.SetDialogue("I unlocked the door");
             }
             else
             {

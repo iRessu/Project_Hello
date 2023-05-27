@@ -48,9 +48,9 @@ public class UI_KeyHolder : MonoBehaviour
             switch (keyType)
             {
                 default:
-                case Key.KeyType.Red: keyImage.color = Color.red; break;
-                case Key.KeyType.Green: keyImage.color = Color.green; break;
-                case Key.KeyType.Blue: keyImage.color = Color.blue; break;
+                case Key.KeyType.Red: keyImage.color = Color.gray; break;
+                case Key.KeyType.Green: keyImage.color = Color.gray; break;
+                case Key.KeyType.Blue: keyImage.color = Color.gray; break;
 
             }
         }
