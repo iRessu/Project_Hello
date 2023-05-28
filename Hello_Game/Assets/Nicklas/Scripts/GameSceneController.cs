@@ -7,6 +7,8 @@ public class GameSceneController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FindObjectOfType<AudioManager>().Play("ExploreTheme");   
+        
+        AudioManager audioManager = FindObjectOfType<AudioManager>();
+        audioManager.Play("ExploreTheme");
     }
 }

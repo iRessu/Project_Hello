@@ -7,6 +7,7 @@ public class VolumeController : MonoBehaviour
 {
 
     public Slider volumeSlider;
+    public AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,6 @@ public class VolumeController : MonoBehaviour
     public void SetVolume(float volume)
     {
         FindObjectOfType<AudioManager>().instance.SetGlobalVolume(volume);
-
         PlayerPrefs.SetFloat("Volume", volume);
     }
 }

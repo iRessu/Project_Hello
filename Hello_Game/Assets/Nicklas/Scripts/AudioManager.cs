@@ -8,11 +8,13 @@ public class AudioManager : MonoBehaviour
     public Sound[] sounds;
     private Sound currentSound;
     public bool isPaused = false;
+   
 
     public AudioManager instance;
     // Start is called before the first frame update
     void Awake()
     {
+        Debug.Log("AudiManager Awake");
 
         if (instance == null)
             instance = this;
@@ -36,8 +38,32 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void SetVolume(string name, float volume)
+    {
+        Debug.Log("Setting volume of " + name + " to " + volume);
+        Sound sound = Array.Find(sounds, s => s.name == name);
+            if(sound == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found!");
+            return;
+        }
+
+        sound.source.volume = volume;
+    }
+
+    public void AdjustVolume(string name, float volumeMultiplier)
+    {
+        Sound sound = Array.Find(sounds, s => s.name == name);
+        if(sound == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found!");
+            return;
+        }
+    }
+
     public void Play (string name)
     {
+
         Sound newSound = Array.Find(sounds, sound => sound.name == name);
         if (newSound == null)
         {
@@ -45,7 +71,7 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        if(currentSound != null && !isPaused)
+        if(currentSound != null && !isPaused && currentSound != newSound)
         {
             currentSound.source.Stop();
         }
