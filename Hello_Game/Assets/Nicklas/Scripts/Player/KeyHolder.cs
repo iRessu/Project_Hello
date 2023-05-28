@@ -24,7 +24,7 @@ public class KeyHolder : MonoBehaviour
     {
         keyList.Add(keyType);
         OnKeysChanged?.Invoke(this, EventArgs.Empty);
-        dialogueManager.SetDialogue("I found a key, I wonder what door it opens?");
+        dialogueManager.SetDialogue("I found a key \n Which door will it unlock?");
     }
 
     public void RemoveKey(Key.KeyType keyType)

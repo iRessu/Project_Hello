@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = false;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         stamBar = FindObjectOfType<StaminaBar>();

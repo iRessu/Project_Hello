@@ -10604,7 +10604,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Their room is downstairs behind the kitchen
+  m_text: "Their room is downstairs \nbehind the kitchen"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d10c86aedfc6d744290a1e6778d5360a, type: 2}
   m_sharedMaterial: {fileID: -1505369544819398952, guid: d10c86aedfc6d744290a1e6778d5360a, type: 2}
@@ -10639,7 +10639,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -10731,7 +10731,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 443786e9a3a0fef4b862a8685af4a99f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
-  m_Pitch: 1.43
+  m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -29577,7 +29577,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'I really love this painting
 
-    We all has to start somewhere!'
+    We all have to start somewhere!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d10c86aedfc6d744290a1e6778d5360a, type: 2}
   m_sharedMaterial: {fileID: -1505369544819398952, guid: d10c86aedfc6d744290a1e6778d5360a, type: 2}
@@ -31601,7 +31601,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: It is really dark outside, almost like a void
+  m_text: 'It is really dark outside
+
+    Almost like a void'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d10c86aedfc6d744290a1e6778d5360a, type: 2}
   m_sharedMaterial: {fileID: -1505369544819398952, guid: d10c86aedfc6d744290a1e6778d5360a, type: 2}
@@ -31636,7 +31638,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0

@@ -10,6 +10,15 @@ public class UIAnimation : MonoBehaviour
         StartCoroutine(DestroyUI());
     }
 
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
     private IEnumerator DestroyUI()
     {
         yield return new WaitForSeconds(3);

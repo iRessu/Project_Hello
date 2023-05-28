@@ -48,6 +48,7 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         FindObjectOfType<PlayerMovement>().enabled = true;
+        Cursor.visible = false;
         GameIsPaused = false;
     }
 
@@ -55,6 +56,7 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(true);
         FindObjectOfType<PlayerMovement>().enabled = false;
+        Cursor.visible = true;
         GameIsPaused = true;
     }
 }

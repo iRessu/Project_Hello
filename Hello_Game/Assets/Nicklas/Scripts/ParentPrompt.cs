@@ -27,7 +27,7 @@ public class ParentPrompt : MonoBehaviour
 
     private IEnumerator WaitTilActivating()
     {
-        dm.SetDialogue("Weird, the door to my parents room is locked, I should search for the key");
+        dm.SetDialogue("Weird, my parents room is locked \n I should search for the key");
         yield return new WaitForSeconds(5);
         colliderToActivate.SetActive(true);
         colliderToDeActivate.SetActive(false);
