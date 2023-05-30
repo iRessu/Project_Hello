@@ -7,15 +7,19 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
+    private bool inOptionMenu = false;
     public GameObject pauseMenuUI;
-    
-    
+    public GameObject optionMenuUI;
 
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if(GameIsPaused)
+            if(inOptionMenu)
+            {
+                ReturnToPauseMenu();
+            }
+            else if(GameIsPaused)
             {
                 Resume();
             }
@@ -43,6 +47,19 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Game Closed");
     }
 
+    public void OptionButton()
+    {
+        inOptionMenu = true;
+        pauseMenuUI.SetActive(false);
+        optionMenuUI.SetActive(true);
+    }
+
+    public void ReturnToPauseMenu()
+    {
+        inOptionMenu = false;
+        optionMenuUI.SetActive(false);
+        pauseMenuUI.SetActive(true);
+    }
 
     void Resume()
     {
