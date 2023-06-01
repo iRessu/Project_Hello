@@ -9,6 +9,11 @@ public class PlayerMovement : MonoBehaviour
     public float sprintMoveSpeed = 10f;
     private bool isSprinting;
     private Rigidbody2D rb;
+
+    public GameObject activateObject;
+    public float stillTimeThreshold;
+    private float stillTimer = 0f;
+    private bool objectIsActive = false;
    
 
     private bool isFacingleft;
@@ -63,6 +68,27 @@ public class PlayerMovement : MonoBehaviour
             stamBar.StopCoroutine(stamBar.RegenStamina());
         }
         Flip();
+
+
+        if(movement.x == 0 && movement.y == 0)
+        {
+            stillTimer += Time.deltaTime;
+
+            if(stillTimer >= stillTimeThreshold && !objectIsActive)
+            {
+                objectIsActive = true;
+                activateObject.SetActive(true);
+            }
+        }
+        else
+        {
+            stillTimer = 0f;
+            if(objectIsActive)
+            {
+                objectIsActive = false;
+                activateObject.SetActive(false);
+            }
+        }
         
     }
 

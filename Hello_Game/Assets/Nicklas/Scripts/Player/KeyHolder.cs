@@ -24,7 +24,15 @@ public class KeyHolder : MonoBehaviour
     {
         keyList.Add(keyType);
         OnKeysChanged?.Invoke(this, EventArgs.Empty);
-        dialogueManager.SetDialogue("I found a key \n Which door will it unlock?");
+
+        if(keyType == Key.KeyType.Red)
+        {
+            dialogueManager.SetDialogue("This must be the key \n to my parents room!");
+        }
+        else
+        {
+            dialogueManager.SetDialogue("I found a key \n Which door will it unlock?");
+        }
     }
 
     public void RemoveKey(Key.KeyType keyType)
@@ -56,10 +64,26 @@ public class KeyHolder : MonoBehaviour
                 keyDoor.OpenDoor();
                 dialogueManager.SetDialogue("I unlocked the door");
             }
+            else if(HasKeyButWrongDoor(keyDoor.GetKeyType()))
+            {
+                dialogueManager.SetDialogue("The key does not fit");
+            }
             else
             {
                 dialogueManager.SetDialogue("The door is locked");
             }
         }
+    }
+
+    private bool HasKeyButWrongDoor(Key.KeyType requiredKeyType)
+    {
+        foreach(Key.KeyType keyType in keyList)
+        {
+            if(keyType != requiredKeyType)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
