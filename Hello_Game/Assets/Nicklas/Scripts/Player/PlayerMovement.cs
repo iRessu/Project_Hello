@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        if(Input.GetKey(KeyCode.LeftShift) && stamBar.currentStamina > 0.2f && !isSprinting)
+        if(Input.GetKey(KeyCode.LeftShift) || Input.GetButtonDown("joystick button 0") && stamBar.currentStamina > 0.2f && !isSprinting)
         {
             isSprinting = true;
             timer += Time.deltaTime;
